@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Result</title>
+		<link rel="stylesheet"
+			href=" {{ url_for('static', path='/result_style.css') }}">
+    </head>
+	<body>
+		<h2>Your text:<br></h2>
+		<h3>{{text}}<br></h3>
+		<h2>Model evaluates your text as:</h2>
+		<h4>{{answer}}</h4>
+		<h2>Time elapsed during evaluation of your text (hh:mm:ss):</h2>
+		<h4>{{time_elapsed}}</h4>		
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Inference</title>
+		<link rel="stylesheet"
+			href=" {{ url_for('static', path='/lsml2_style.css') }}">
+    </head>
+	<body>
+
+		<form action="/show_result" method="post" enctype="multipart/form-data">
+			<div class="content">
+			<h3>Enter your text:<br></h3>
+			<p>Please note that for better prediction input text should contain at least 10 symbols.</p>
+			<h3><input type="text" name="text" required></h3>
+			<h4><button type="submit">Evaluate</button><br></h4>
+			</div>
+		</form>
+    </body>
+</html>

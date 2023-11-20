@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>lsml2_fp_(Lazarev)</title>
+            <link rel="stylesheet"
+                  href="{{ url_for('static', path='/lsml2_style.css') }}">
+
+    </head>
+    <body>
+    <div class="header">
+        <h1>Welcome to</h1>
+        <h1>the Final project of LSML2 course</h1>
+        <h2>Table of contents</h2>
+        <h4><a href="#toc1">1. Project description</a></h4>
+        <h4><a href="#toc2">2. Multi-lingual HateSpeech Dataset</a></h4>
+        <h4><a href="#toc3">3. Model description</a></h4>
+        <h4><a href="#toc4">4. Experiment with the trained model</a></h4>
+        <h4><a href="#toc5">Appendix</a></h4>        
+        <br>
+    </div>
+
+    <div class="content">
+        <div id="toc1"><h4>1. Project description</h4></div>
+        <p>In the final project we will implement a model to classify whether a text, typed by user, is <b>hate speech text</b> or <b>non-hate.</b></p>
+        <p>It seems to be an actual task nowadays since people communicate a lot in social media and kiberbulling spreads widely.</p>        
+        <div id="toc2"><h4>2. Multi-lingual HateSpeech Dataset</h4></div>
+        <p>To learn our model we will use <b>Hate Speech Dataset in Multiple Languages.</b></p>
+        <p> Dataset contains hate speech text with labels, where <b>0</b> represents <b>non-hate</b> and <b>1</b>
+            shows <b>hate texts.</b><br>The following are the languages in the dataset:<br> Arabic, English, Chinese, French, German,
+            Russian, Turkish, Roman Hindi/Urdu, Korean, Italian, Spanish, Portuguese, Indonesian - 13 in total.<br>
+        Number of samples:<br>
+            - for training: <b>219 981;</b><br>
+            - for testing:&nbsp;&nbsp;&nbsp;<b>24 449</b>.</p>
+
+           <p><a href="https://www.kaggle.com/datasets/wajidhassanmoosa/multilingual-hatespeech-dataset" target="_blank"> More details about Dataset on
+               <img src="{{ url_for('static', path='/kaggle_logo.png') }}" height='22' alt='Kaggle logo'></a></p>
+        <div id="toc3"><h4>3. Model description</h4></div>
+        <p>
+            As a base model we will use <b>"BERT multilingual base model (uncased)"</b>: pretrained model on the top 102 languages with the largest Wikipedia.
+        </p>
+        <p>
+            For a base line we will use BERT produced embeddings as features for CatBoostClassifier and classify whether text is hate or not.<br>
+            For a more advanced approach, we will fine-tune the base model on our dataset to adapt the model to our downstream task. In this case, we will use BERT as a classifier, modifying its top layer for binary classification purposes.
+        </p>
+        <p>
+            <a href="https://huggingface.co/bert-base-multilingual-uncased#bert-multilingual-base-model-uncased" target="_blank">
+               More details about base model on&nbsp;
+            <img src="{{ url_for('static', path='/hf_logo.png') }}" height='22' alt='Hugging Face logo'>&nbsp;Hugging Face
+            </a>
+        </p>
+        <div id="toc4"><h4>4. Experiment with the trained model</h4></div>
+        <p>
+            <a href="/inference" target="_blank">Get prediction of the trained model on your own text</a>
+        </p>
+    </div>
+    <div class="conclusion">
+        <h3>
+            <div id="toc5">Appendix</div>
+        </h3>       
+    
+        <h5><a href="/download/ipynb" target="_blank">Download Model training code (.ipynb)&nbsp;</a></h5>
+        <h5><a href="/download/pdf" target="_blank">Download Model training code (.pdf)&nbsp;</a></h5>
+        <h5><a href="/download/script" target="_blank">Download Web-service script (.py)&nbsp;</a></h5>
+    </div>
+    <br><br>
+    <a href="#top">
+    <p class="marquee"><span>Go to the TOP of the page</span></p>
+    </a>
+    </body>
+</html>
